@@ -1,9 +1,14 @@
 import React from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
+import "./style.sass";
 
 
 interface Props { };
 
+/**
+ * ts中的&表示交集，两个类型都拥有的类型
+ * 在 typescript 中, 我们定义类型有两种方式： 接口(interface) 和类型别名(type alias)
+ */
 type HomeProps = Props & RouteComponentProps;
 
 interface State { };
@@ -25,6 +30,11 @@ class Home extends React.Component<HomeProps, State> {
   render() {
     let { test } = this.state;
     return <div>
+      <div className="nav">
+        <span>返回</span>
+        <span>首页</span>
+        <span></span>
+      </div>
       <p>{test}times</p>
       <div onClick={this.Increase}>click me to Increase</div>
       <div onClick={this.FntoAnt}>click me to Ant.tsx</div>

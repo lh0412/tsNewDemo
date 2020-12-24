@@ -11,7 +11,11 @@ module.exports = {
   },
   //添加需要解析的文件格式
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.json', 'sass'],
+    alias: {
+      Util: path.resolve(__dirname, "./src/util"),
+      Common: path.resolve(__dirname, "./src/Common")
+    }
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -33,6 +37,10 @@ module.exports = {
     {
       test: /\.tsx?$/,
       use: ['ts-loader']
+    },
+    {
+      test: /\.scss$/,
+      loaders: ['style-loader', 'css-loader', 'sass-loader']
     }]
   },
   devServer: {
