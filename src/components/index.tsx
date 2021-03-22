@@ -3,6 +3,7 @@
  */
 import React, { lazy, Suspense } from 'react';
 import { Switch, Route, Redirect, HashRouter as Router } from 'react-router-dom';
+import "../styles/index.scss";
 import { Ant } from './Ant';
 import { HomeComponent } from './Home/index';
 // const Mian = lazy(() => import("./Ant"));

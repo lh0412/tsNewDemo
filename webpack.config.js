@@ -11,7 +11,7 @@ module.exports = {
   },
   //添加需要解析的文件格式
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json', 'sass'],
+    extensions: ['.ts', '.tsx', '.js', '.json', 'scss'],
     alias: {
       Util: path.resolve(__dirname, "./src/util"),
       Common: path.resolve(__dirname, "./src/Common")
@@ -46,7 +46,7 @@ module.exports = {
   devServer: {
     contentBase: "./dist",
     hot: true,
-    port: 8080,
+    port: 8000,
     host: "0.0.0.0",
     disableHostCheck: true,
     historyApiFallback: true,
