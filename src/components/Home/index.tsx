@@ -36,8 +36,8 @@ class Home extends React.Component<HomeProps, State> {
         <span></span>
       </div>
       <p>{test}times</p>
-      <div onClick={this.Increase}>click me to Increase</div>
-      <div onClick={this.FntoAnt}>click me to Ant.tsx</div>
+      <div onClick={this.Increase} className="btn">click me to Increase</div>
+      <div onClick={this.FntoAnt} className="btn">click me to Ant.tsx</div>
     </div>
   }
   private FntoAnt = () => {
