@@ -1,25 +1,22 @@
 import React from "react";
-import { withRouter, RouteComponentProps } from "react-router-dom";
+
 import "./style.scss";
-
-
-interface Props { };
 
 /**
  * ts中的&表示交集，两个类型都拥有的类型
  * 在 typescript 中, 我们定义类型有两种方式： 接口(interface) 和类型别名(type alias)
  */
-type HomeProps = Props & RouteComponentProps;
+// type HomeProps = Props & RouteComponentProps;
 
-interface State { };
-class Home extends React.Component<HomeProps, State> {
-  constructor(props: HomeProps) {
+interface State {
+  test: number
+};
+class Home extends React.Component<any, State> {
+  constructor(props: any) {
     super(props);
-  }
-
-  //public 定义状态
-  public state = {
-    test: 0
+    this.state = {
+      test: 0
+    }
   }
   //定义方法 
   Increase = () => {
@@ -35,7 +32,7 @@ class Home extends React.Component<HomeProps, State> {
         <span>首页</span>
         <span></span>
       </div>
-      <p>{test}times</p>
+      <p>{test} times</p>
       <div onClick={this.Increase} className="btn">click me to Increase</div>
       <div onClick={this.FntoAnt} className="btn">click me to Ant.tsx</div>
     </div>
@@ -44,5 +41,4 @@ class Home extends React.Component<HomeProps, State> {
     this.props.history.push('/ant');
   }
 }
-
-export const HomeComponent = withRouter(Home);
+export default (Home);
